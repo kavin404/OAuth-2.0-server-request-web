@@ -1,0 +1,28 @@
+body {
+    background: black;
+}
+
+.container-fluid {
+    text-align: center;
+    height: 100vh !important;
+}
+
+.box {
+    color: #21213E;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 300px;
+    padding: 100px;
+}
+
+.logo img {
+    margin: auto !important;
+    height: 200px;
+    padding: 100px;
+}
+
+.title {
+    font-size: 18px;
+    text-align: center;
+}

@@ -8,7 +8,7 @@ $client->addScope(Google_Service_Drive::DRIVE_FILE);
 
 if (isset($_SESSION['auth_token']) && $_SESSION['auth_token']) {
     if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
-        $client->setAccessToken($_SESSION['Access_Token']);
+        $client->setAccessToken($_SESSION['auth_token']);
         $drive = new Google_Service_Drive($client);
 
         $file_name = $_FILES['fileToUpload']['name'];
