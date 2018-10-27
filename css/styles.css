@@ -5,6 +5,7 @@ body {
 .container-fluid {
     text-align: center;
     height: 100vh !important;
+    color: white;
 }
 
 .box {
@@ -19,10 +20,22 @@ body {
 .logo img {
     margin: auto !important;
     height: 200px;
-    padding: 100px;
+  
 }
 
+input {
+    color: white;
+}
 .title {
     font-size: 18px;
+    color: white;
     text-align: center;
+}
+
+.white-color {
+    color: white !important; 
+}
+
+.sucessful {
+    padding-top: 100px;
 }

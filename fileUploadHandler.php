@@ -5,7 +5,6 @@ $client = new Google_Client();
 $client->setAuthConfig('credentials.json');
 $client->addScope(Google_Service_Drive::DRIVE_FILE);
 
-
 if (isset($_SESSION['auth_token']) && $_SESSION['auth_token']) {
     if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
         $client->setAccessToken($_SESSION['auth_token']);
@@ -17,11 +16,11 @@ if (isset($_SESSION['auth_token']) && $_SESSION['auth_token']) {
             'name' => $file_name));
         $content = file_get_contents(realpath($_FILES['fileToUpload']['tmp_name']));
         try {
-            $file = $drive->files->create($fileMetadata, array(
+            $result = $drive->files->create($fileMetadata, array(
                 'data' => $content,
                 'uploadType' => 'multipart',
                 'fields' => 'id'));
-
+            $_SESSION['result-id'] = $result -> id;
             header('Location:successful-page.php');
         } catch (Exception $e) {
             throw new Exception("Error: " . $e->getMessage());
